@@ -1,36 +1,36 @@
-import json from '@rollup/plugin-json';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
-import sourceMaps from 'rollup-plugin-sourcemaps';
-import { terser } from 'rollup-plugin-terser';
-import dts from 'rollup-plugin-dts';
+import json from "@rollup/plugin-json";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "rollup-plugin-typescript2";
+import sourceMaps from "rollup-plugin-sourcemaps";
+import { terser } from "rollup-plugin-terser";
+import dts from "rollup-plugin-dts";
 
-import pkg from './package.json';
+import pkg from "./package.json";
 
-const globalName = 'formatTitle';
+const globalName = "formatTitle";
 
 const configs = {
 	global: {
-		file: pkg.unpkg.replace('esm', 'global'),
-		format: 'iife',
-		target: 'es5',
+		file: pkg.unpkg.replace("esm", "global"),
+		format: "iife",
+		target: "es5",
 		browser: true,
 	},
 	browser: {
 		file: pkg.unpkg,
-		format: 'es',
+		format: "es",
 		browser: true,
 		external: false,
 	},
 	bundler: {
 		file: pkg.module,
-		format: 'es',
+		format: "es",
 		dev: true,
 	},
 	cjs: {
 		file: pkg.main,
-		format: 'cjs',
+		format: "cjs",
 		dev: true,
 	},
 };
@@ -41,38 +41,32 @@ function createConfig({
 	target = null,
 	dev = false,
 	browser = false,
-	external = Object.fromEntries(Object.keys(pkg.dependencies || {}).map((x) => [x, x])),
+	external = Object.fromEntries(
+		Object.keys(pkg.dependencies || {}).map((x) => [x, x])
+	),
 }) {
 	const config = {
-		input: 'src/index.ts',
+		input: "src/index.ts",
 		output: {
 			file,
 			format,
-			exports: 'auto',
+			exports: "auto",
 			sourcemap: true,
 		},
 		external: external ? Object.keys(external) : undefined,
 		watch: {
-			include: 'src/**/*',
+			include: "src/**/*",
 		},
 		plugins: [
 			json(),
-			typescript({
-				tsconfigOverride: {
-					compilerOptions: {
-						...(target ? { target, lib: [target] } : {}),
-						declaration: false,
-						declarationMap: false,
-					},
-				},
-			}),
+			typescript(),
 			resolve({ browser }),
 			commonjs(),
 			sourceMaps(),
 		],
 	};
 
-	if (format === 'iife') {
+	if (format === "iife") {
 		config.output.name = globalName;
 		config.output.globals = external ?? {};
 	}
@@ -80,7 +74,7 @@ function createConfig({
 	if (!dev) {
 		config.plugins.push(
 			terser({
-				ecma: target?.replace('es', '') ?? '2019',
+				ecma: target?.replace("es", "") ?? "2019",
 			})
 		);
 	}
@@ -90,12 +84,15 @@ function createConfig({
 
 function createConfigs(configs) {
 	const typesConfig = {
-		input: 'src/index.ts',
-		output: [{ file: pkg.types, format: 'es' }],
+		input: "src/index.ts",
+		output: [{ file: pkg.types, format: "es" }],
 		plugins: [dts()],
 	};
 
-	return [...Object.keys(configs).map((key) => createConfig(configs[key])), typesConfig];
+	return [
+		...Object.keys(configs).map((key) => createConfig(configs[key])),
+		typesConfig,
+	];
 }
 
 export default createConfigs(configs);
