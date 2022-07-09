@@ -42,3 +42,27 @@ characters. By default, this regex is set to `/\s|-|_/g`.
 
 If your favorite specially cased word isn't being capitalized properly,
 [please open an issue](https://github.com/directus/format-title/issues/new) or submit a pull request!
+
+### Requirements
+
+- NodeJS LTS
+- pnpm 7.5.0 or newer
+
+### Commands
+
+The following `pnpm` scripts are available:
+
+- `pnpm lint` – Lint the code using Eslint / Prettier
+- `pnpm test` – Run the unit tests
+
+Make sure that both commands pass locally before creating a Pull Request.
+
+### Pushing a Release
+
+_This applies to maintainers only_
+
+1. Create a new version / tag by running `pnpm version <version>`. Tip: use `pnpm version patch|minor|major` to
+   auto-bump the version number
+1. Push the version commit / tag to GitHub (`git push && git push --tags`)
+
+The CI will automatically build and release to npm, and generate the release notes.
