@@ -16,12 +16,16 @@ test(`If string is last, and not special or an acronym, return as is`, () => {
 	expect(handleSpecialWords('World', 1, ['Hello', 'World'])).toBe('World');
 });
 
+test(`If string is four characters or more, return as is`, () => {
+	expect(handleSpecialWords('Whether', 1, ['a', 'Whether', 'c'])).toBe('Whether');
+});
+
 test(`Return lowercased if preposition`, () => {
-	expect(handleSpecialWords('About', 1, ['a', 'About', 'c'])).toBe('about');
+	expect(handleSpecialWords('To', 1, ['a', 'To', 'c'])).toBe('to');
 });
 
 test(`Return lowercased if conjunction`, () => {
-	expect(handleSpecialWords('Whether', 1, ['a', 'Whether', 'c'])).toBe('whether');
+	expect(handleSpecialWords('If', 1, ['a', 'If', 'c'])).toBe('if');
 });
 
 test(`Return lowercased if article`, () => {
