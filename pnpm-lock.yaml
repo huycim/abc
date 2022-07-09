@@ -15,7 +15,7 @@ specifiers:
   prettier: ^2.7.1
   rimraf: 3.0.2
   rollup: 2.67.3
-  rollup-plugin-dts: 4.1.0
+  rollup-plugin-dts: 4.2.2
   rollup-plugin-sourcemaps: 0.6.3
   rollup-plugin-terser: 7.0.2
   rollup-plugin-typescript2: 0.31.2
@@ -38,7 +38,7 @@ devDependencies:
   prettier: 2.7.1
   rimraf: 3.0.2
   rollup: 2.67.3
-  rollup-plugin-dts: 4.1.0_iuaifpge23fwtew55xlkuqiquy
+  rollup-plugin-dts: 4.2.2_iuaifpge23fwtew55xlkuqiquy
   rollup-plugin-sourcemaps: 0.6.3_rollup@2.67.3
   rollup-plugin-terser: 7.0.2_rollup@2.67.3
   rollup-plugin-typescript2: 0.31.2_iuaifpge23fwtew55xlkuqiquy
@@ -2688,6 +2688,13 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /magic-string/0.26.2:
+    resolution: {integrity: sha512-NzzlXpclt5zAbmo6h6jNc8zl2gNRGHvmsZW4IvZhTC4W7k4OlLP+S5YLussa/r3ixNT66KOQfNORlXHSOy/X4A==}
+    engines: {node: '>=12'}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
+
   /make-dir/3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -3061,14 +3068,14 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-dts/4.1.0_iuaifpge23fwtew55xlkuqiquy:
-    resolution: {integrity: sha512-rriXIm3jdUiYeiAAd1Fv+x2AxK6Kq6IybB2Z/IdoAW95fb4uRUurYsEYKa8L1seedezDeJhy8cfo8FEL9aZzqg==}
-    engines: {node: '>=v12.22.7'}
+  /rollup-plugin-dts/4.2.2_iuaifpge23fwtew55xlkuqiquy:
+    resolution: {integrity: sha512-A3g6Rogyko/PXeKoUlkjxkP++8UDVpgA7C+Tdl77Xj4fgEaIjPSnxRmR53EzvoYy97VMVwLAOcWJudaVAuxneQ==}
+    engines: {node: '>=v12.22.11'}
     peerDependencies:
       rollup: ^2.55
-      typescript: ~4.1 || ~4.2 || ~4.3 || ~4.4 || ~4.5
+      typescript: ^4.1
     dependencies:
-      magic-string: 0.25.9
+      magic-string: 0.26.2
       rollup: 2.67.3
       typescript: 4.5.2
     optionalDependencies:
