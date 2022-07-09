@@ -4,6 +4,9 @@ import conjunctions from '../constants/conjunctions';
 import prepositions from '../constants/prepositions';
 import specialCase from '../constants/special-case';
 
+/**
+ * See https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case for the rules
+ */
 export function handleSpecialWords(str: string, index: number, words: string[]): string {
 	const lowercaseStr = str.toLowerCase();
 	const uppercaseStr = str.toUpperCase();
@@ -21,6 +24,9 @@ export function handleSpecialWords(str: string, index: number, words: string[]):
 	// If the word is the last word in the sentence, but it's not a specially
 	// cased word or an acronym, return the capitalized string
 	if (index === words.length - 1) return str;
+
+	// Return the word capitalized if it's 4 characters or more
+	if (str.length >= 4) return str;
 
 	if (prepositions.includes(lowercaseStr)) return lowercaseStr;
 	if (conjunctions.includes(lowercaseStr)) return lowercaseStr;

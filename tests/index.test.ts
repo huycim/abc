@@ -2,7 +2,7 @@ import formatTitle from '../src/index';
 
 const tests: [string, string][] = [
 	['snowWhiteAndTheSevenDwarfs', 'Snow White and the Seven Dwarfs'],
-	['NewcastleUponTyne', 'Newcastle upon Tyne'],
+	['NewcastleUponTyne', 'Newcastle Upon Tyne'],
 	['brighton_on_sea', 'Brighton on Sea'],
 	['apple_releases_new_ipad', 'Apple Releases New iPad'],
 	['7-food-trends', '7 Food Trends'],

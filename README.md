@@ -1,7 +1,7 @@
 ## Title Formatter
 
 Custom string formatter that converts any string into
-[Title Case](http://www.grammar-monster.com/lessons/capital_letters_title_case.htm)
+[Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case) for the rules
 
 This package converts any string into title case. This means only using capital letters for the principal words.
 Articles, conjunctions, and prepositions do not get capital letters unless they start or end the title
@@ -9,7 +9,7 @@ Articles, conjunctions, and prepositions do not get capital letters unless they 
 | input                        | output                          |
 | ---------------------------- | ------------------------------- |
 | `snowWhiteAndTheSevenDwarfs` | Snow White and the Seven Dwarfs |
-| `NewcastleUponTyne`          | Newcastle upon Tyne             |
+| `NewcastleUponTyne`          | Newcastle Upon Tyne             |
 | `brighton_on_sea`            | Brighton on Sea                 |
 | `apple_releases_new_ipad`    | Apple Releases New iPad         |
 | `7-food-trends`              | 7 Food Trends                   |
