@@ -33,6 +33,12 @@ runs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
 
+    - name: Install dependencies (Dependabot)
+      shell: bash
+      run: pnpm install --no-frozen-lockfile
+      if: github.event.label.name == 'Dependencies'
+
     - name: Install dependencies
       shell: bash
       run: pnpm install
+      if: github.event.label.name != 'Dependencies'
