@@ -34,7 +34,7 @@
 	"author": "rijkvanzanten <rijkvanzanten@me.com>",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/directus/directus.git"
+		"url": "git+https://github.com/directus/format-title.git"
 	},
 	"license": "MIT",
 	"engines": {
