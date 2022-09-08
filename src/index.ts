@@ -1,7 +1,7 @@
-import { decamelize } from './utils/decamelize';
-import { capitalize } from './utils/capitalize';
-import { handleSpecialWords } from './utils/handle-special-words';
-import { combine } from './utils/combine';
+import { decamelize } from './utils/decamelize.js';
+import { capitalize } from './utils/capitalize.js';
+import { handleSpecialWords } from './utils/handle-special-words.js';
+import { combine } from './utils/combine.js';
 
 export function formatTitle(title: string, separator?: RegExp): string {
 	if (!separator) separator = new RegExp('/s|-|_| ', 'g');

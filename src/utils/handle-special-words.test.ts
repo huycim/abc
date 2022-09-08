@@ -1,4 +1,5 @@
-import { handleSpecialWords } from '../../src/utils/handle-special-words';
+import { handleSpecialWords } from './handle-special-words.js';
+import { expect, test } from 'vitest';
 
 test('Returns special formatting when matches', () => {
 	expect(handleSpecialWords('mysql', 0, ['mysql'])).toBe('MySQL');

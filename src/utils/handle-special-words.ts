@@ -1,8 +1,8 @@
-import acronyms from '../constants/acronyms';
-import articles from '../constants/articles';
-import conjunctions from '../constants/conjunctions';
-import prepositions from '../constants/prepositions';
-import specialCase from '../constants/special-case';
+import acronyms from '../constants/acronyms.js';
+import articles from '../constants/articles.js';
+import conjunctions from '../constants/conjunctions.js';
+import prepositions from '../constants/prepositions.js';
+import specialCase from '../constants/special-case.js';
 
 /**
  * See https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case for the rules
